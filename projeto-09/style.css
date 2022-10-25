@@ -30,10 +30,15 @@ body::before {
   width: 100%;
   top: 0;
   left: 0;
+  display: block;
   height: 32rem;
   position: absolute;
   z-index: -1;
   background: #8E9AAF;
+}
+
+.page {
+  padding-bottom: 6rem;
 }
 
 header img {
@@ -65,5 +70,80 @@ p {
 
   height: 7.5rem;
   margin: 6rem 0 6rem;
-  text-align: center;
+
+  animation: opacity 700ms 350ms backwards;
+}
+
+main {
+  margin: 3.2rem;
+}
+
+.card-group {
+  display: grid;
+  gap: 3.6rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+
+  animation: downtop 700ms;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--font-color-h2);
+
+  background: #FEEAFA;
+  border-radius: 2rem;
+  padding: 0 2.4rem 0;
+
+  animation: topdown 700ms;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
